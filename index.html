@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Everdream Film presents The Black Reef, a dark cinematic pirate adventure and an original AI-assisted feature project.">
+    <meta name="theme-color" content="#05080d">
+    <title>The Black Reef | Everdream Film</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/main.js" defer></script>
+  </head>
+  <body class="home-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <div class="nav-wrap">
+        <a class="wordmark" href="index.html" aria-label="Everdream Film home">
+          <span class="wordmark__name">EVERDREAM</span>
+          <span class="wordmark__type">Film</span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Open navigation">
+          <span class="menu-toggle__line"></span>
+        </button>
+
+        <nav class="site-nav" id="site-navigation" aria-label="Primary navigation" data-open="false">
+          <ul class="site-nav__list">
+            <li><a class="site-nav__link" href="index.html" aria-current="page">Home</a></li>
+            <li><a class="site-nav__link" href="film.html">The Film</a></li>
+            <li><a class="site-nav__link" href="trailer.html">Trailer</a></li>
+            <li><a class="site-nav__link" href="support.html">Support</a></li>
+            <li><a class="site-nav__link" href="roadmap.html">Roadmap</a></li>
+            <li><a class="site-nav__link" href="projects.html">Future Projects</a></li>
+            <li><a class="site-nav__link" href="about.html">About</a></li>
+            <li><a class="site-nav__link" href="contact.html">Contact</a></li>
+          </ul>
+          <a class="back-film" href="support.html">Back the Film</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="home-hero" aria-labelledby="hero-title">
+        <img class="home-hero__art" src="assets/images/hero-black-reef.png" alt="The crew of The Black Reef standing on a storm-darkened dock" fetchpriority="high">
+        <div class="home-hero__content">
+          <h1 class="display-title" id="hero-title">THE BLACK REEF</h1>
+          <p class="home-hero__subtitle">A dark, character-driven pirate adventure.</p>
+          <div class="button-row">
+            <a class="button button--primary" href="trailer.html">Watch Concept Trailer</a>
+            <a class="button button--ghost" href="film.html">Explore the Film</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section home-trailer" aria-labelledby="featured-trailer-title">
+        <div class="shell">
+          <div class="section-heading section-heading--tight">
+            <div>
+              <p class="eyebrow">Concept trailer</p>
+              <h2 class="section-title" id="featured-trailer-title">A first look at The Black Reef.</h2>
+            </div>
+            <p class="section-heading__copy">A completed 7–8 minute proof of concept for the world, tone, and cinematic language of The Black Reef.</p>
+          </div>
+
+          <a class="trailer-poster" href="trailer.html" aria-label="Open the Black Reef concept trailer page">
+            <img src="assets/images/trailer-black-reef.png" alt="The Black Reef proof-of-concept artwork featuring the crew at sea" loading="lazy">
+            <span class="play-button" aria-hidden="true"></span>
+            <span class="trailer-poster__meta">Proof of concept · 7–8 minutes</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="section section--navy" aria-labelledby="crew-title">
+        <div class="shell">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Characters</p>
+              <h2 class="section-title" id="crew-title">Meet the crew.</h2>
+            </div>
+            <a class="text-link text-link--crew" href="film.html#characters">Enter the world</a>
+          </div>
+
+          <div class="crew-grid">
+            <article class="crew-card character-card">
+              <img src="assets/images/captain.png" alt="Portrait of The Captain" loading="lazy">
+              <div class="crew-card__body"><h3 id="home-captain">The Captain</h3><p>She has been to Black Reef before. Nineteen of her crew never came back.</p><span class="crew-card__prompt" aria-hidden="true">View dossier</span></div>
+              <button class="crew-card__open character-trigger" type="button" data-character="captain" aria-labelledby="home-captain" aria-haspopup="dialog"></button>
+            </article>
+            <article class="crew-card character-card">
+              <img src="assets/images/gambler.png" alt="Portrait of The Gambler" loading="lazy">
+              <div class="crew-card__body"><h3 id="home-gambler">The Gambler</h3><p>The map changed hands. His interest in Black Reef did not.</p><span class="crew-card__prompt" aria-hidden="true">View dossier</span></div>
+              <button class="crew-card__open character-trigger" type="button" data-character="gambler" aria-labelledby="home-gambler" aria-haspopup="dialog"></button>
+            </article>
+            <article class="crew-card character-card">
+              <img src="assets/images/scout.png" alt="Portrait of The Scout" loading="lazy">
+              <div class="crew-card__body"><h3 id="home-scout">The Scout</h3><p>First toward danger, and usually the first to see it coming.</p><span class="crew-card__prompt" aria-hidden="true">View dossier</span></div>
+              <button class="crew-card__open character-trigger" type="button" data-character="scout" aria-labelledby="home-scout" aria-haspopup="dialog"></button>
+            </article>
+            <article class="crew-card character-card">
+              <img src="assets/images/cartographer.png" alt="Portrait of The Cartographer" loading="lazy">
+              <div class="crew-card__body"><h3 id="home-cartographer">The Cartographer</h3><p>Keeper of routes, fragments, and paths that refuse to stay still.</p><span class="crew-card__prompt" aria-hidden="true">View dossier</span></div>
+              <button class="crew-card__open character-trigger" type="button" data-character="cartographer" aria-labelledby="home-cartographer" aria-haspopup="dialog"></button>
+            </article>
+            <article class="crew-card character-card">
+              <img src="assets/images/survivor.png" alt="Portrait of The Survivor" loading="lazy">
+              <div class="crew-card__body"><h3 id="home-survivor">The Survivor</h3><p>One of the few who escaped the deep, carrying unfinished knowledge.</p><span class="crew-card__prompt" aria-hidden="true">View dossier</span></div>
+              <button class="crew-card__open character-trigger" type="button" data-character="survivor" aria-labelledby="home-survivor" aria-haspopup="dialog"></button>
+            </article>
+            <article class="crew-card crew-card--rat character-card">
+              <img src="assets/images/rat.png" alt="Portrait of The Rat" loading="lazy">
+              <div class="crew-card__body"><h3 id="home-rat">The Rat</h3><p>Small enough to reach the places no one else can.</p><span class="crew-card__prompt" aria-hidden="true">View dossier</span></div>
+              <button class="crew-card__open character-trigger" type="button" data-character="rat" aria-labelledby="home-rat" aria-haspopup="dialog"></button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section studio-teaser" aria-labelledby="future-title">
+        <div class="shell">
+          <a class="studio-teaser__visual" href="projects.html">
+            <img src="assets/images/future-projects.png" alt="Figures looking across a dark sea toward distant islands and a sailing ship" loading="lazy">
+            <div class="studio-teaser__copy">
+              <p class="eyebrow">Beyond Film One</p>
+              <h2 class="section-title" id="future-title">New worlds wait beyond the reef.</h2>
+              <span class="text-link">Explore future projects</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <dialog class="character-dialog" data-character-dialog aria-labelledby="character-dialog-title">
+        <div class="character-dialog__surface">
+          <button class="character-dialog__close" type="button" data-dialog-close aria-label="Close character dossier"><span aria-hidden="true">&#215;</span></button>
+          <div class="character-dialog__portrait"><img src="assets/images/captain.png" alt="" data-character-image></div>
+          <div class="character-dialog__copy">
+            <p class="eyebrow">Character dossier</p>
+            <h2 id="character-dialog-title" data-character-title>The Captain</h2>
+            <p class="character-dialog__lead" data-character-lead></p>
+            <div class="character-dialog__bio" data-character-copy></div>
+          </div>
+        </div>
+      </dialog>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell">
+        <div class="footer-top">
+          <div>
+            <p class="footer-title">Everdream Film</p>
+            <p class="footer-copy">An independent studio creating original, AI-assisted cinematic stories.</p>
+          </div>
+          <ul class="footer-nav" aria-label="Footer navigation">
+            <li><a href="film.html">The Film</a></li>
+            <li><a href="trailer.html">Trailer</a></li>
+            <li><a href="support.html">Support</a></li>
+            <li><a href="roadmap.html">Roadmap</a></li>
+            <li><a href="projects.html">Future Projects</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="https://www.youtube.com/@EverdreamAI">YouTube</a></li>
+          </ul>
+        </div>
+        <div class="footer-bottom">
+          <span>© <span data-current-year>2026</span> Everdream Film</span>
+          <span>Original worlds. Independent filmmaking.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

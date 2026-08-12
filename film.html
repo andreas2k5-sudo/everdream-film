@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Discover The Black Reef: a dark, character-driven pirate adventure from independent studio Everdream Film.">
+    <meta name="theme-color" content="#05080d">
+    <title>The Film | The Black Reef</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <div class="nav-wrap">
+        <a class="wordmark" href="index.html" aria-label="Everdream Film home">
+          <span class="wordmark__name">EVERDREAM</span>
+          <span class="wordmark__type">Film</span>
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Open navigation"><span class="menu-toggle__line"></span></button>
+        <nav class="site-nav" id="site-navigation" aria-label="Primary navigation" data-open="false">
+          <ul class="site-nav__list">
+            <li><a class="site-nav__link" href="index.html">Home</a></li>
+            <li><a class="site-nav__link" href="film.html" aria-current="page">The Film</a></li>
+            <li><a class="site-nav__link" href="trailer.html">Trailer</a></li>
+            <li><a class="site-nav__link" href="support.html">Support</a></li>
+            <li><a class="site-nav__link" href="roadmap.html">Roadmap</a></li>
+            <li><a class="site-nav__link" href="projects.html">Future Projects</a></li>
+            <li><a class="site-nav__link" href="about.html">About</a></li>
+            <li><a class="site-nav__link" href="contact.html">Contact</a></li>
+          </ul>
+          <a class="back-film" href="support.html">Back the Film</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="film-hero" aria-labelledby="page-title">
+        <img src="assets/images/crew-group.png" alt="Characters from The Black Reef gathered on a dark coast" fetchpriority="high">
+        <div class="film-hero__content shell">
+          <p class="eyebrow">Film One</p>
+          <h1 class="page-title" id="page-title">The Black Reef</h1>
+          <p class="lede">A dark, character-driven pirate adventure.</p>
+        </div>
+      </section>
+
+      <section class="section film-story" id="story" aria-labelledby="story-title">
+        <div class="shell intro-grid">
+          <div>
+            <p class="eyebrow">Story</p>
+            <h2 class="section-title" id="story-title">It begins with a wager.</h2>
+          </div>
+          <div class="body-copy">
+            <p class="intro-copy">Three adventurers win a secret treasure map in a card game with a sinister, cloaked Gambler.</p>
+            <p>His warning follows them: “You won the map. Don’t mistake that for winning the treasure.”</p>
+            <p>To reach Black Reef, they need a ship and a Captain. She has been there before, and nineteen of her crew never returned. She refuses at first, but still wants answers—and finally agrees to go back.</p>
+            <p>Their route begins at a dangerous entrance linked to low tide. A small rat travels with them, able to reach places the human characters cannot.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="film-world" id="world" aria-labelledby="world-title">
+        <img src="assets/images/3317222d-1629-45ef-945c-880b752edb7c.png" alt="The crew overlooking a jagged sea passage toward Black Reef" loading="lazy">
+        <div class="film-world__copy shell">
+          <p class="eyebrow">The World</p>
+          <h2 class="section-title" id="world-title">The tide reveals a way in.</h2>
+          <p>Black Reef sits beyond a maze of stone, current, and storm. The map promises a passage. The Captain knows what it can take.</p>
+        </div>
+      </section>
+
+      <section class="section section--navy" id="characters" aria-labelledby="characters-title">
+        <div class="shell">
+          <div class="section-heading section-heading--top">
+            <div>
+              <p class="eyebrow">Characters</p>
+              <h2 class="section-title" id="characters-title">Meet the crew.</h2>
+            </div>
+            <p class="section-heading__copy">Select a portrait to open the character dossier.</p>
+          </div>
+
+          <div class="crew-grid crew-grid--film">
+            <article class="crew-card character-card"><img src="assets/images/captain.png" alt="Portrait of The Captain" loading="lazy"><div class="crew-card__body"><h3 id="film-captain">The Captain</h3><p>Hardened, guarded, and still haunted by the crew she lost.</p><span class="crew-card__prompt" aria-hidden="true">View dossier</span></div><button class="crew-card__open character-trigger" type="button" data-character="captain" aria-labelledby="film-captain" aria-haspopup="dialog"></button></article>
+            <article class="crew-card character-card"><img src="assets/images/gambler.png" alt="Portrait of The Gambler" loading="lazy"><div class="crew-card__body"><h3 id="film-gambler">The Gambler</h3><p>The man who lost the map, but never lost sight of it.</p><span class="crew-card__prompt" aria-hidden="true">View dossier</span></div><button class="crew-card__open character-trigger" type="button" data-character="gambler" aria-labelledby="film-gambler" aria-haspopup="dialog"></button></article>
+            <article class="crew-card character-card"><img src="assets/images/scout.png" alt="Portrait of The Scout" loading="lazy"><div class="crew-card__body"><h3 id="film-scout">The Scout</h3><p>First toward danger, and usually the first to see it coming.</p><span class="crew-card__prompt" aria-hidden="true">View dossier</span></div><button class="crew-card__open character-trigger" type="button" data-character="scout" aria-labelledby="film-scout" aria-haspopup="dialog"></button></article>
+            <article class="crew-card character-card"><img src="assets/images/cartographer.png" alt="Portrait of The Cartographer" loading="lazy"><div class="crew-card__body"><h3 id="film-cartographer">The Cartographer</h3><p>Keeper of routes, fragments, and paths that refuse to stay still.</p><span class="crew-card__prompt" aria-hidden="true">View dossier</span></div><button class="crew-card__open character-trigger" type="button" data-character="cartographer" aria-labelledby="film-cartographer" aria-haspopup="dialog"></button></article>
+            <article class="crew-card character-card"><img src="assets/images/survivor.png" alt="Portrait of The Survivor" loading="lazy"><div class="crew-card__body"><h3 id="film-survivor">The Survivor</h3><p>One of the few who escaped the deep, carrying unfinished knowledge.</p><span class="crew-card__prompt" aria-hidden="true">View dossier</span></div><button class="crew-card__open character-trigger" type="button" data-character="survivor" aria-labelledby="film-survivor" aria-haspopup="dialog"></button></article>
+            <article class="crew-card crew-card--rat character-card"><img src="assets/images/rat.png" alt="Portrait of The Rat" loading="lazy"><div class="crew-card__body"><h3 id="film-rat">The Rat</h3><p>The smallest witness aboard, and the hardest to stop.</p><span class="crew-card__prompt" aria-hidden="true">View dossier</span></div><button class="crew-card__open character-trigger" type="button" data-character="rat" aria-labelledby="film-rat" aria-haspopup="dialog"></button></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="film-stakes" id="lore" aria-labelledby="lore-title">
+        <div class="film-stakes__art">
+          <img src="assets/images/d0d5533e-858b-46b2-8dfb-fa3455c21934.png" alt="A weathered map, compass, cards, and lantern inside the Captain's cabin" loading="lazy">
+        </div>
+        <div class="film-stakes__content">
+          <p class="eyebrow">Black Reef lore</p>
+          <h2 class="section-title" id="lore-title">Why return?</h2>
+          <p class="film-stakes__lead">Because nineteen people vanished there—and the island has not finished with the one who came back.</p>
+          <div class="stakes-list">
+            <div><span>01</span><p>A map won too easily from a man who never gives anything away.</p></div>
+            <div><span>02</span><p>An entrance visible only when the sea draws back.</p></div>
+            <div><span>03</span><p>Answers the Captain has carried longer than she can admit.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="closing-cta closing-cta--image" aria-labelledby="film-cta-title">
+        <div class="shell closing-cta__inner">
+          <p class="eyebrow">See the world in motion</p>
+          <h2 class="section-title" id="film-cta-title">Watch the proof of concept.</h2>
+          <div class="button-row"><a class="button button--primary" href="trailer.html">View the Trailer</a></div>
+        </div>
+      </section>
+
+      <dialog class="character-dialog" data-character-dialog aria-labelledby="character-dialog-title">
+        <div class="character-dialog__surface">
+          <button class="character-dialog__close" type="button" data-dialog-close aria-label="Close character dossier"><span aria-hidden="true">&#215;</span></button>
+          <div class="character-dialog__portrait"><img src="assets/images/captain.png" alt="" data-character-image></div>
+          <div class="character-dialog__copy"><p class="eyebrow">Character dossier</p><h2 id="character-dialog-title" data-character-title>The Captain</h2><p class="character-dialog__lead" data-character-lead></p><div class="character-dialog__bio" data-character-copy></div></div>
+        </div>
+      </dialog>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell">
+        <div class="footer-top">
+          <div><p class="footer-title">Everdream Film</p><p class="footer-copy">An independent studio creating original, AI-assisted cinematic stories.</p></div>
+          <ul class="footer-nav" aria-label="Footer navigation">
+            <li><a href="film.html">The Film</a></li><li><a href="trailer.html">Trailer</a></li><li><a href="support.html">Support</a></li><li><a href="roadmap.html">Roadmap</a></li><li><a href="projects.html">Future Projects</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="https://www.youtube.com/@EverdreamAI">YouTube</a></li>
+          </ul>
+        </div>
+        <div class="footer-bottom"><span>© <span data-current-year>2026</span> Everdream Film</span><span>Original worlds. Independent filmmaking.</span></div>
+      </div>
+    </footer>
+  </body>
+</html>
