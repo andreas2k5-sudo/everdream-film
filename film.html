@@ -5,9 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Discover The Black Reef: a dark, character-driven pirate adventure from independent studio Everdream Film.">
     <meta name="theme-color" content="#05080d">
+    <link rel="canonical" href="https://everdreamfilm.com/film.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Everdream Film">
+    <meta property="og:title" content="The Film | The Black Reef">
+    <meta property="og:description" content="Discover the story, world, and characters of The Black Reef.">
+    <meta property="og:url" content="https://everdreamfilm.com/film.html">
+    <meta property="og:image" content="https://everdreamfilm.com/assets/images/hero-black-reef.png">
+    <meta property="og:image:alt" content="The crew of The Black Reef on a storm-darkened dock">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Film | The Black Reef">
+    <meta name="twitter:description" content="Discover the story, world, and characters of The Black Reef.">
+    <meta name="twitter:image" content="https://everdreamfilm.com/assets/images/hero-black-reef.png">
     <title>The Film | The Black Reef</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="js/main.js" defer></script>
+    <link rel="stylesheet" href="css/styles.css?v=20260813">
+    <script src="js/main.js?v=20260813" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -62,10 +74,12 @@
 
       <section class="film-world" id="world" aria-labelledby="world-title">
         <img src="assets/images/3317222d-1629-45ef-945c-880b752edb7c.png" alt="The crew overlooking a jagged sea passage toward Black Reef" loading="lazy">
-        <div class="film-world__copy shell">
-          <p class="eyebrow">The World</p>
-          <h2 class="section-title" id="world-title">The tide reveals a way in.</h2>
-          <p>Black Reef sits beyond a maze of stone, current, and storm. The map promises a passage. The Captain knows what it can take.</p>
+        <div class="film-world__inner shell">
+          <div class="film-world__copy">
+            <p class="eyebrow">The World</p>
+            <h2 class="section-title" id="world-title">The tide reveals a way in.</h2>
+            <p>Black Reef has a dangerous entrance associated with low tide. The map offers a way forward. The Captain knows what the last voyage cost.</p>
+          </div>
         </div>
       </section>
 
@@ -74,34 +88,32 @@
           <div class="section-heading section-heading--top">
             <div>
               <p class="eyebrow">Characters</p>
-              <h2 class="section-title" id="characters-title">Meet the crew.</h2>
+              <h2 class="section-title" id="characters-title">Meet the characters.</h2>
             </div>
             <p class="section-heading__copy">Select a portrait to open the character dossier.</p>
           </div>
 
           <div class="crew-grid crew-grid--film">
-            <article class="crew-card character-card"><img src="assets/images/captain.png" alt="Portrait of The Captain" loading="lazy"><div class="crew-card__body"><h3 id="film-captain">The Captain</h3><p>Hardened, guarded, and still haunted by the crew she lost.</p><span class="crew-card__prompt" aria-hidden="true">View dossier</span></div><button class="crew-card__open character-trigger" type="button" data-character="captain" aria-labelledby="film-captain" aria-haspopup="dialog"></button></article>
-            <article class="crew-card character-card"><img src="assets/images/gambler.png" alt="Portrait of The Gambler" loading="lazy"><div class="crew-card__body"><h3 id="film-gambler">The Gambler</h3><p>The man who lost the map, but never lost sight of it.</p><span class="crew-card__prompt" aria-hidden="true">View dossier</span></div><button class="crew-card__open character-trigger" type="button" data-character="gambler" aria-labelledby="film-gambler" aria-haspopup="dialog"></button></article>
-            <article class="crew-card character-card"><img src="assets/images/scout.png" alt="Portrait of The Scout" loading="lazy"><div class="crew-card__body"><h3 id="film-scout">The Scout</h3><p>First toward danger, and usually the first to see it coming.</p><span class="crew-card__prompt" aria-hidden="true">View dossier</span></div><button class="crew-card__open character-trigger" type="button" data-character="scout" aria-labelledby="film-scout" aria-haspopup="dialog"></button></article>
-            <article class="crew-card character-card"><img src="assets/images/cartographer.png" alt="Portrait of The Cartographer" loading="lazy"><div class="crew-card__body"><h3 id="film-cartographer">The Cartographer</h3><p>Keeper of routes, fragments, and paths that refuse to stay still.</p><span class="crew-card__prompt" aria-hidden="true">View dossier</span></div><button class="crew-card__open character-trigger" type="button" data-character="cartographer" aria-labelledby="film-cartographer" aria-haspopup="dialog"></button></article>
-            <article class="crew-card character-card"><img src="assets/images/survivor.png" alt="Portrait of The Survivor" loading="lazy"><div class="crew-card__body"><h3 id="film-survivor">The Survivor</h3><p>One of the few who escaped the deep, carrying unfinished knowledge.</p><span class="crew-card__prompt" aria-hidden="true">View dossier</span></div><button class="crew-card__open character-trigger" type="button" data-character="survivor" aria-labelledby="film-survivor" aria-haspopup="dialog"></button></article>
-            <article class="crew-card crew-card--rat character-card"><img src="assets/images/rat.png" alt="Portrait of The Rat" loading="lazy"><div class="crew-card__body"><h3 id="film-rat">The Rat</h3><p>The smallest witness aboard, and the hardest to stop.</p><span class="crew-card__prompt" aria-hidden="true">View dossier</span></div><button class="crew-card__open character-trigger" type="button" data-character="rat" aria-labelledby="film-rat" aria-haspopup="dialog"></button></article>
+            <article class="crew-card character-card"><img src="assets/images/captain.png" alt="Portrait of The Captain" loading="lazy"><div class="crew-card__body"><h3 id="film-captain">The Captain</h3><p>She has been to Black Reef before. Nineteen of her crew never returned.</p><span class="crew-card__prompt" aria-hidden="true">View dossier</span></div><button class="crew-card__open character-trigger" type="button" data-character="captain" aria-labelledby="film-captain" aria-haspopup="dialog"></button></article>
+            <article class="crew-card character-card"><img src="assets/images/gambler.png" alt="Portrait of The Gambler" loading="lazy"><div class="crew-card__body"><h3 id="film-gambler">The Gambler</h3><p>A sinister, cloaked figure whose wager puts the secret map in play.</p><span class="crew-card__prompt" aria-hidden="true">View dossier</span></div><button class="crew-card__open character-trigger" type="button" data-character="gambler" aria-labelledby="film-gambler" aria-haspopup="dialog"></button></article>
+            <article class="crew-card crew-card--rat character-card"><img src="assets/images/rat.png" alt="Portrait of The Rat" loading="lazy"><div class="crew-card__body"><h3 id="film-rat">The Rat</h3><p>A recurring companion able to reach places the others cannot.</p><span class="crew-card__prompt" aria-hidden="true">View dossier</span></div><button class="crew-card__open character-trigger" type="button" data-character="rat" aria-labelledby="film-rat" aria-haspopup="dialog"></button></article>
+            <article class="crew-card crew-card--adventurers character-card"><div class="crew-card__triptych" role="img" aria-label="Portraits of the three adventurers"><img src="assets/images/scout.png" alt="" loading="lazy"><img src="assets/images/cartographer.png" alt="" loading="lazy"><img src="assets/images/survivor.png" alt="" loading="lazy"></div><div class="crew-card__body"><h3 id="film-adventurers">The Adventurers</h3><p>Three travellers win the map to Black Reef and set the return voyage in motion.</p><span class="crew-card__prompt" aria-hidden="true">View dossier</span></div><button class="crew-card__open character-trigger" type="button" data-character="adventurers" aria-labelledby="film-adventurers" aria-haspopup="dialog"></button></article>
           </div>
         </div>
       </section>
 
-      <section class="film-stakes" id="lore" aria-labelledby="lore-title">
+      <section class="film-stakes" id="proof" aria-labelledby="proof-title">
         <div class="film-stakes__art">
-          <img src="assets/images/d0d5533e-858b-46b2-8dfb-fa3455c21934.png" alt="A weathered map, compass, cards, and lantern inside the Captain's cabin" loading="lazy">
+          <img src="assets/images/d0d5533e-858b-46b2-8dfb-fa3455c21934.png" alt="A weathered map, compass, cards, and lantern on a shipboard table" loading="lazy">
         </div>
         <div class="film-stakes__content">
-          <p class="eyebrow">Black Reef lore</p>
-          <h2 class="section-title" id="lore-title">Why return?</h2>
-          <p class="film-stakes__lead">Because nineteen people vanished there—and the island has not finished with the one who came back.</p>
+          <p class="eyebrow">The proof of concept</p>
+          <h2 class="section-title" id="proof-title">The world is already on screen.</h2>
+          <p class="film-stakes__lead">The completed 7–8 minute proof of concept establishes the film’s tone, characters, and cinematic language.</p>
           <div class="stakes-list">
-            <div><span>01</span><p>A map won too easily from a man who never gives anything away.</p></div>
-            <div><span>02</span><p>An entrance visible only when the sea draws back.</p></div>
-            <div><span>03</span><p>Answers the Captain has carried longer than she can admit.</p></div>
+            <div><span>01</span><p>A dark, character-driven pirate adventure.</p></div>
+            <div><span>02</span><p>A wager, a secret map, and a return to Black Reef.</p></div>
+            <div><span>03</span><p>A working foundation for the feature film to come.</p></div>
           </div>
         </div>
       </section>
@@ -109,8 +121,8 @@
       <section class="closing-cta closing-cta--image" aria-labelledby="film-cta-title">
         <div class="shell closing-cta__inner">
           <p class="eyebrow">See the world in motion</p>
-          <h2 class="section-title" id="film-cta-title">Watch the proof of concept.</h2>
-          <div class="button-row"><a class="button button--primary" href="trailer.html">View the Trailer</a></div>
+          <h2 class="section-title" id="film-cta-title">Enter the screening room.</h2>
+          <div class="button-row"><a class="button button--primary" href="trailer.html">View the Proof of Concept</a></div>
         </div>
       </section>
 
@@ -128,7 +140,7 @@
         <div class="footer-top">
           <div><p class="footer-title">Everdream Film</p><p class="footer-copy">An independent studio creating original, AI-assisted cinematic stories.</p></div>
           <ul class="footer-nav" aria-label="Footer navigation">
-            <li><a href="film.html">The Film</a></li><li><a href="trailer.html">Trailer</a></li><li><a href="support.html">Support</a></li><li><a href="roadmap.html">Roadmap</a></li><li><a href="projects.html">Future Projects</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="https://www.youtube.com/@EverdreamAI">YouTube</a></li>
+            <li><a href="film.html">The Film</a></li><li><a href="trailer.html">Trailer</a></li><li><a href="support.html">Support</a></li><li><a href="roadmap.html">Roadmap</a></li><li><a href="projects.html">Future Projects</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="https://www.youtube.com/@EverdreamAI" target="_blank" rel="noopener noreferrer">YouTube</a></li>
           </ul>
         </div>
         <div class="footer-bottom"><span>© <span data-current-year>2026</span> Everdream Film</span><span>Original worlds. Independent filmmaking.</span></div>

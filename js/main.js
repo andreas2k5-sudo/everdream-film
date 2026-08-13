@@ -29,7 +29,7 @@ if (menuButton && siteNavigation) {
   });
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
+    if (event.key === "Escape" && menuButton.getAttribute("aria-expanded") === "true") {
       setMenuState(false);
       menuButton.focus();
     }
@@ -49,7 +49,7 @@ if (menuButton && siteNavigation) {
   });
 
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 1180) setMenuState(false);
+    if (window.innerWidth > 1250) setMenuState(false);
   });
 }
 
@@ -98,58 +98,38 @@ const characterProfiles = {
     alt: "Portrait of The Captain",
     lead: "She has been to Black Reef before. Nineteen of her crew never came back.",
     paragraphs: [
-      "A hardened leader with a measured voice and little patience for bravado. The last voyage left her capable, scarred, and guarded.",
-      "She refuses the map at first. Returning means facing the place that took her crew—and the possibility that what happened there was never finished.",
+      "She initially refuses to return to the place where she lost them.",
+      "She ultimately agrees because she still wants answers about what happened.",
     ],
   },
   gambler: {
     title: "The Gambler",
     image: "assets/images/gambler.png",
     alt: "Portrait of The Gambler",
-    lead: "He lost the map in a card game. That may have been the first move, not the last.",
+    lead: "A sinister, cloaked Gambler ties a secret map to a card-game wager.",
     paragraphs: [
-      "Cloaked, unsettling, and impossible to read, he always seems to know more than he says. His warning follows the map out of the room.",
-      "Whether he wants the treasure found, the crew tested, or something carried back from the reef remains unclear.",
+      "The three adventurers win the map.",
+      "His warning follows them: “You won the map. Don’t mistake that for winning the treasure.”",
     ],
   },
-  scout: {
-    title: "The Scout",
-    image: "assets/images/scout.png",
-    alt: "Portrait of The Scout",
-    lead: "First toward danger, and usually the first to see it coming.",
+  adventurers: {
+    title: "The Adventurers",
+    image: "assets/images/crew-group.png",
+    alt: "The adventurers and crew of The Black Reef",
+    lead: "Three adventurers win the secret map to Black Reef in a card-game wager.",
     paragraphs: [
-      "Sharp-eyed, resourceful, and practical, the Scout reads terrain faster than most people read a chart.",
-      "Unknown ground rewards caution, but the crew needs someone willing to cross the line between watching and moving.",
-    ],
-  },
-  cartographer: {
-    title: "The Cartographer",
-    image: "assets/images/cartographer.png",
-    alt: "Portrait of The Cartographer",
-    lead: "Maps reveal a path. They can also decide what a traveller fails to see.",
-    paragraphs: [
-      "Keeper of routes, fragments, tide notes, and hidden passages, the Cartographer understands how much uncertainty can hide inside a confident line of ink.",
-      "At Black Reef, every mark must be questioned—and every missing mark may be a warning.",
-    ],
-  },
-  survivor: {
-    title: "The Survivor",
-    image: "assets/images/survivor.png",
-    alt: "Portrait of The Survivor",
-    lead: "One of the few who escaped the deep, carrying fear, memory, and unfinished knowledge.",
-    paragraphs: [
-      "Survival did not make the past clearer. It left fragments: sounds beneath the water, a route that should not exist, and faces that still return in sleep.",
-      "Going back may be the only way to learn which memories are warnings and which are invitations.",
+      "They need a ship and a Captain to follow it.",
+      "Their individual identities remain part of the film’s unfolding mystery.",
     ],
   },
   rat: {
     title: "The Rat",
     image: "assets/images/rat.png",
     alt: "Portrait of The Rat",
-    lead: "The smallest witness aboard, and the one most able to go where humans cannot.",
+    lead: "A recurring companion able to reach places the human characters cannot.",
     paragraphs: [
-      "Clever, quick, and easily underestimated, the Rat slips through locked spaces, narrow passages, and the blind spots of larger creatures.",
-      "On a voyage built around hidden entrances, being small may be the crew's greatest advantage.",
+      "The Rat travels with the adventurers and remains active in the story.",
+      "Small passages can offer a route where the others cannot follow.",
     ],
   },
 };
@@ -180,21 +160,47 @@ if (characterDialog && characterTriggers.length) {
         element.textContent = paragraph;
         return element;
       }));
+      document.body.classList.add("dialog-open");
       characterDialog.showModal();
     });
   });
 
   dialogClose?.addEventListener("click", () => characterDialog.close());
+  characterDialog.addEventListener("cancel", (event) => {
+    event.preventDefault();
+    characterDialog.close();
+  });
   characterDialog.addEventListener("click", (event) => {
     if (event.target === characterDialog) characterDialog.close();
   });
-  characterDialog.addEventListener("close", () => activeCharacterTrigger?.focus());
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && characterDialog.open) characterDialog.close();
+  });
+  characterDialog.addEventListener("close", () => {
+    document.body.classList.remove("dialog-open");
+    activeCharacterTrigger?.focus();
+  });
 }
 
 const roadmap = document.querySelector("[data-roadmap]");
 
 if (roadmap) {
   const roadmapToggles = [...roadmap.querySelectorAll(".roadmap__toggle")];
+
+  if (reduceMotion || !("IntersectionObserver" in window)) {
+    roadmap.classList.add("is-visible");
+  } else {
+    const roadmapObserver = new IntersectionObserver(
+      ([entry], observer) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.18 },
+    );
+    roadmapObserver.observe(roadmap);
+  }
 
   roadmapToggles.forEach((toggle) => {
     toggle.addEventListener("click", () => {
@@ -219,51 +225,4 @@ if (roadmap) {
       }
     });
   });
-}
-
-const contactForm = document.querySelector("[data-contact-form]");
-
-if (contactForm) {
-  const formFields = contactForm.querySelector("[data-form-fields]");
-  const successMessage = contactForm.querySelector("[data-form-success]");
-  const errorMessage = contactForm.querySelector("[data-form-error]");
-  const submitButton = contactForm.querySelector('button[type="submit"]');
-  const formIsActive = contactForm.dataset.formMode === "active";
-
-  if (formFields) formFields.disabled = !formIsActive;
-
-  if (formIsActive && submitButton && successMessage && errorMessage) {
-    submitButton.textContent = "Send Message";
-
-    contactForm.addEventListener("submit", async (event) => {
-      event.preventDefault();
-
-      successMessage.hidden = true;
-      errorMessage.hidden = true;
-      submitButton.disabled = true;
-      submitButton.textContent = "Sending…";
-
-      try {
-        const response = await fetch(contactForm.action, {
-          method: "POST",
-          body: new FormData(contactForm),
-          headers: { accept: "application/json" },
-        });
-        const result = await response.json();
-
-        if (!response.ok || !result.success) {
-          throw new Error(result.error || "The message could not be sent.");
-        }
-
-        contactForm.reset();
-        successMessage.hidden = false;
-      } catch (error) {
-        errorMessage.textContent = error.message || "Something went wrong. Please check the form and try again.";
-        errorMessage.hidden = false;
-      } finally {
-        submitButton.disabled = false;
-        submitButton.textContent = "Send Message";
-      }
-    });
-  }
 }
