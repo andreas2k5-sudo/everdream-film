@@ -18,8 +18,8 @@
     <meta name="twitter:description" content="Contact Everdream Film about projects, collaborations, sponsorships, and press.">
     <meta name="twitter:image" content="https://everdreamfilm.com/assets/images/hero-black-reef.png">
     <title>Contact | Everdream Film</title>
-    <link rel="stylesheet" href="css/styles.css?v=20260813">
-    <script src="js/main.js?v=20260813" defer></script>
+    <link rel="stylesheet" href="css/styles.css?v=20260814-1">
+    <script src="js/main.js?v=20260814-2" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -53,30 +53,55 @@
         </div>
       </section>
 
-      <section class="section contact-section" aria-labelledby="contact-options-title">
-        <h2 class="visually-hidden" id="contact-options-title">Contact options</h2>
+      <section class="section contact-section" aria-labelledby="contact-form-title">
         <div class="shell contact-layout">
           <div class="contact-aside">
-            <p class="eyebrow">Email</p>
-            <a class="contact-email" href="mailto:hello@everdreamfilm.com">hello@everdreamfilm.com</a>
+            <p class="eyebrow">Prefer email?</p>
+            <a class="contact-email" href="mailto:everdreamfilm@hotmail.com">everdreamfilm@hotmail.com</a>
             <ul class="contact-categories" aria-label="Enquiry types"><li>Collaborations</li><li>Sponsorship</li><li>Press</li><li>Film and project enquiries</li></ul>
           </div>
 
-          <div class="contact-options">
-            <article class="contact-option">
-              <span class="contact-option__index" aria-hidden="true">01</span>
-              <p class="eyebrow">Studio enquiries</p>
-              <h2>Start with an email.</h2>
-              <p>For project enquiries, collaborations, sponsorships, or press, write directly to the studio at the address shown here.</p>
-              <a class="button button--primary" href="mailto:hello@everdreamfilm.com">Email Everdream Film</a>
-            </article>
-            <article class="contact-option">
-              <span class="contact-option__index" aria-hidden="true">02</span>
-              <p class="eyebrow">Watch the journey</p>
-              <h2>Follow the work on screen.</h2>
-              <p>Proof-of-concept material and production updates are shared through the Everdream Film YouTube channel.</p>
-              <a class="button button--ghost" href="https://www.youtube.com/@EverdreamAI" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
-            </article>
+          <div class="contact-form-panel">
+            <p class="eyebrow">Studio enquiries</p>
+            <h2 class="contact-form-title" id="contact-form-title">Send a message.</h2>
+            <p class="contact-form-intro">Share a few details and your message will be sent directly to Everdream Film.</p>
+
+            <form class="contact-form" action="/api/contact" method="post" data-contact-form>
+              <div class="form-honeypot" aria-hidden="true">
+                <label for="company">Company</label>
+                <input id="company" name="company" type="text" tabindex="-1" autocomplete="off">
+              </div>
+
+              <div class="contact-form__fields">
+                <div class="form-grid">
+                  <div class="form-field">
+                    <label for="name">Name</label>
+                    <input id="name" name="name" type="text" autocomplete="name" maxlength="100" required>
+                  </div>
+                  <div class="form-field">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" autocomplete="email" maxlength="254" required>
+                  </div>
+                </div>
+
+                <div class="form-field">
+                  <label for="subject">Subject</label>
+                  <input id="subject" name="subject" type="text" autocomplete="off" maxlength="160" required>
+                </div>
+
+                <div class="form-field">
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" rows="8" maxlength="5000" required></textarea>
+                </div>
+              </div>
+
+              <button class="button button--primary contact-form__submit" type="submit" data-contact-submit>
+                <span data-contact-submit-label>Send Message</span>
+              </button>
+
+              <p class="form-status form-status--success" data-contact-success role="status" aria-live="polite" tabindex="-1" hidden>Thanks — your message has been sent. I’ll get back to you as soon as I can.</p>
+              <p class="form-status form-status--error" data-contact-error role="alert" aria-live="assertive" tabindex="-1" hidden>Something went wrong while sending your message. You can email me directly at <a href="mailto:everdreamfilm@hotmail.com">everdreamfilm@hotmail.com</a>.</p>
+            </form>
           </div>
         </div>
       </section>
@@ -86,7 +111,7 @@
       <div class="shell">
         <div class="footer-top">
           <div><p class="footer-title">Everdream Film</p><p class="footer-copy">An independent studio creating original, AI-assisted cinematic stories.</p></div>
-          <ul class="footer-nav" aria-label="Footer navigation"><li><a href="film.html">The Film</a></li><li><a href="trailer.html">Trailer</a></li><li><a href="support.html">Support</a></li><li><a href="roadmap.html">Roadmap</a></li><li><a href="projects.html">Future Projects</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="https://www.youtube.com/@EverdreamAI" target="_blank" rel="noopener noreferrer">YouTube</a></li></ul>
+          <ul class="footer-nav" aria-label="Footer navigation"><li><a href="film.html">The Film</a></li><li><a href="trailer.html">Trailer</a></li><li><a href="support.html">Support</a></li><li><a href="roadmap.html">Roadmap</a></li><li><a href="projects.html">Future Projects</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="mailto:everdreamfilm@hotmail.com">Email</a></li><li><a href="https://www.youtube.com/@EverdreamAI" target="_blank" rel="noopener noreferrer">YouTube</a></li></ul>
         </div>
         <div class="footer-bottom"><span>© <span data-current-year>2026</span> Everdream Film</span><span>Original worlds. Independent filmmaking.</span></div>
       </div>

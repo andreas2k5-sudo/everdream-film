@@ -11,12 +11,13 @@ Official website for Everdream Film and its first feature project, **The Black R
 - `roadmap.html` — Production roadmap
 - `projects.html` — Current and future films
 - `about.html` — Studio story and approach
-- `contact.html` — Contact information and Cloudflare-ready form
+- `contact.html` — Contact information and active contact form
 - `css/styles.css` — Shared responsive design system
-- `js/main.js` — Mobile navigation and current-year behavior
-- `functions/api/contact.js` — Validation-only Cloudflare Pages Function
+- `js/main.js` — Navigation, interactions, and asynchronous contact form behavior
+- `functions/api/contact.js` — POST-only proxy to the bound contact mail Worker
+- `CONTACT_FORM_SETUP.md` — Record of the completed Cloudflare contact architecture
 
-The production artwork is stored in `assets/images/` and used directly throughout the responsive layouts. The trailer page uses the approved thumbnail but intentionally contains no temporary video URL; its HTML comment marks where the real player can be connected later.
+The production artwork is stored in `assets/images/` and used directly throughout the responsive layouts. The homepage and trailer page embed the completed concept film from the official Everdream Film YouTube upload.
 
 ## Local preview
 
@@ -39,8 +40,12 @@ Visitor
 → contact form
 → /api/contact
 → Cloudflare Pages Function
-→ verified email delivery
+→ CONTACT_MAILER Service Binding
+→ everdream-contact-mailer Worker
+→ EMAIL binding
 → real studio inbox
 ```
 
-The public form is currently presented in a pre-launch state. Its fields remain in place but are disabled until verified email delivery is connected; change `data-form-mode="prelaunch"` to `data-form-mode="active"` in `contact.html` only after that integration is ready. The function validates submissions and rejects obvious honeypot entries, but it deliberately does not yet send email, log messages, or store personal information. Server-side Cloudflare Turnstile validation can be added where the code comments indicate. The private recipient and any credentials must be configured as protected Cloudflare environment bindings, never committed to this repository.
+The form submits JSON asynchronously. The Pages Function is a POST-only proxy that forwards the original request through the `CONTACT_MAILER` Service Binding. The deployed `everdream-contact-mailer` Worker handles validation, honeypot rejection, and email delivery through its `EMAIL` binding. The frontend reports success only when the Worker response does.
+
+Cloudflare configuration is complete. [`CONTACT_FORM_SETUP.md`](CONTACT_FORM_SETUP.md) records the active architecture and the remaining commit, push, automatic redeploy, and live-test steps.

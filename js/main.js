@@ -226,3 +226,69 @@ if (roadmap) {
     });
   });
 }
+
+const contactForm = document.querySelector("[data-contact-form]");
+
+if (contactForm) {
+  const submitButton = contactForm.querySelector("[data-contact-submit]");
+  const submitLabel = contactForm.querySelector("[data-contact-submit-label]");
+  const successMessage = contactForm.querySelector("[data-contact-success]");
+  const errorMessage = contactForm.querySelector("[data-contact-error]");
+  let isSubmitting = false;
+
+  const setSubmitting = (submitting) => {
+    isSubmitting = submitting;
+    contactForm.setAttribute("aria-busy", String(submitting));
+    if (submitButton) submitButton.disabled = submitting;
+    if (submitLabel) submitLabel.textContent = submitting ? "Sending…" : "Send Message";
+  };
+
+  const hideMessages = () => {
+    if (successMessage) successMessage.hidden = true;
+    if (errorMessage) errorMessage.hidden = true;
+  };
+
+  contactForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (isSubmitting) return;
+
+    hideMessages();
+    setSubmitting(true);
+
+    try {
+      const formData = new FormData(contactForm);
+      const payload = {
+        name: String(formData.get("name") || ""),
+        email: String(formData.get("email") || ""),
+        subject: String(formData.get("subject") || ""),
+        message: String(formData.get("message") || ""),
+        company: String(formData.get("company") || ""),
+      };
+
+      const response = await fetch(contactForm.action, {
+        method: "POST",
+        body: JSON.stringify(payload),
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      });
+
+      const result = await response.json().catch(() => null);
+      if (!response.ok || result?.success !== true) throw new Error("Contact request was not delivered");
+
+      contactForm.reset();
+      if (successMessage) {
+        successMessage.hidden = false;
+        successMessage.focus({ preventScroll: true });
+      }
+    } catch {
+      if (errorMessage) {
+        errorMessage.hidden = false;
+        errorMessage.focus({ preventScroll: true });
+      }
+    } finally {
+      setSubmitting(false);
+    }
+  });
+}
